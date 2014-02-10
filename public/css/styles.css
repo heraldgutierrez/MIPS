@@ -29,3 +29,7 @@ thead, .header {
 	font-weight: bold;
 	text-decoration: underline;
 }
+
+.winner {
+	font-weight: bold;
+}
