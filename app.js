@@ -9,8 +9,20 @@ var path = require('path');
 var app = express();
 var server = http.createServer(app);
 
+// mongodb
+var mongoose = require('mongoose');
+var mongoDBConnect = process.env.MONGOLAB_URI ||
+	process.env.MONGOHQ_URL ||
+	'mongodb://localhost/mips';
+mongoose.connect(mongoDBConnect);
+
+// models
+var models = require('./model/models');
+models.generate();
+
 // routes
 var routes = require('./routes');
+var isLoggedIn = routes.isLoggedIn;
 
 // all environments
 app.configure(function() {
