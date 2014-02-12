@@ -20,7 +20,8 @@ function generate() {
 
 function addressBook() {
 	var aBSchema = new Schema({
-		first_name	: String,
+		mr			: String,
+		mrs			: String,
 		last_name	: String,
 		phone 		: String,
 		address 	: String

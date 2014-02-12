@@ -22,6 +22,7 @@ models.generate();
 
 // routes
 var routes = require('./routes');
+var basketball = require('./routes/basketball');
 var isLoggedIn = routes.isLoggedIn;
 
 // all environments
@@ -55,6 +56,15 @@ app.configure('development', function() {
 *********************************************************/
 
 app.get('/', routes.index);
+app.get('/login', routes.login);				// login page
+app.get('/signup', routes.signup);				// signup page
+app.post('/loginUser', routes.loginUser);		// user login
+app.post('/signupUser', routes.signupUser);		// user signup
+
+
+app.get('/AddressBook', isLoggedIn, routes.addressBook);
+app.get('/Basketball', basketball.schedule);
+
 
 server.listen(app.get('port'), function() {
 	console.log('Express server listening on port ' + app.get('port'));
