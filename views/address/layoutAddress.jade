@@ -1,0 +1,24 @@
+extends ../layout
+
+block styles
+	link(rel='stylesheet' type='text/css' href='/css/addressBook.css')
+	block addressStyles
+
+block content
+	div.navbar-container
+		div.navbar
+			div.navbar-inner
+				ul.nav
+					if level == 1
+						li#li_Admin 
+							a(href='/Admin') Admin
+						li.divider-vertical
+					li#li_Address
+						a(href='/AddressBook') Address Book
+					if level < 3
+						li.divider-vertical
+						li#li_AddMember
+							a(href='/AddressBook/AddMember') Add New Member
+
+	div#addressContainer
+		block addressContent

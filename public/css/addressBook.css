@@ -1,0 +1,50 @@
+.navbar-container {
+	margin: auto;
+	background-color: #777;
+}
+
+.navbar .nav > li {
+	float: left;
+	height: 20px;
+}
+
+.navbar .nav > li > a {
+	padding: 1px 10px;
+	/*color: #999999;*/
+	color: #fff;
+	text-decoration: none;
+}
+
+.navbar .nav > li > a:hover {
+	background-color: transparent;
+	/*color: #ffffff;*/
+	color: black;
+}
+
+.nav > li {
+	margin-top: 5px;
+}
+
+.nav > li > a {
+	display: block;
+	height: 30px;
+}
+
+.navbar .nav .nav-active > a, .navbar .nav .nav-active > a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.navbar .divider-vertical {
+	width: 2px;
+	/*margin-top: 10px !important;*/
+	margin-right: 9px;
+	overflow: hidden;
+	border-right: 1px solid #333333;
+}
+
+.navbar-inner {
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 30px;
+}

@@ -48,6 +48,26 @@ function player() {
 	return mongoose.model('Players', PSchema);
 }
 
+function schedule() {
+	var SSchema = new Schema({
+		season	: Number,
+		week	: Number,
+		date 	: Date,
+		games 	: [
+			{
+				game 	: Number,
+				time 	: String,
+				home 	: String,
+				homeScore : { type : Number, default : 0 },
+				away 	: String,
+				awayScore : { type : Number, default : 0 }
+			}
+		]
+	});
+
+	return mongoose.model('Schedule', SSchema);
+}
+
 function team() {
 	var TSchema = new Schema({
 		team 		: String,
@@ -79,7 +99,7 @@ function user() {
 	var USchema = new Schema({
 		username	: String,
 		password 	: String,
-		admin		: { type : Boolean, default : false },
+		level		: Number
 	});
 
 	USchema.pre('save', function(next) {

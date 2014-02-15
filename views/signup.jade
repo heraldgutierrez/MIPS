@@ -12,6 +12,13 @@ block content
 				input.input.username(type='text' name='username' placeholder='Username')
 				input.input.password(type='password' name='password' placeholder='Password')
 				input.input.password(type='password' name='verifyPassword' placeholder='Verify Password')
+				br
+				br
+				label Level : 
+				select(name='level')
+					option(value='1') Admin
+					option(value='2') Moderator
+					option(value='3' selected) Member
 
 			div.footer
 				input.button(type='submit' name='submit' value='Sign Up')

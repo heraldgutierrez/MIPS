@@ -1,0 +1,47 @@
+extends layoutAddress
+
+block addressStyles
+	link(rel='stylesheet' type='text/css' href='/css/addMember.css')
+
+block scripts
+	script(src='/js/addMember.js')
+
+block addressContent
+	div#wrapper
+		form.login-form(action='/signupUser', method='post')
+			div.header
+				h1.signup Add New Member
+			div.content
+				table
+					tr
+						td
+							label Mr.
+						td :
+						td
+							input(type='text' name='mr' placeholder='Mr.')
+					tr
+						td
+							label Mrs.
+						td :
+						td
+							input(type='text' name='mrs' placeholder='Mrs.')
+					tr
+						td
+							label Last Name
+						td :
+						td
+							input(type='text' name='last' placeholder='Last Name')
+					tr
+						td
+							label Address
+						td :
+						td
+							input(type='text' name='address' placeholder='Address')
+					tr
+						td
+							label Phone Number
+						td :
+						td
+							input#telephone(type='text' name='phone' placeholder='Format: (204) 123-4567')
+			div.footer
+				input.button(type='submit' name='submit' value='Sign Up')

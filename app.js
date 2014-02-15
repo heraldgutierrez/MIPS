@@ -22,8 +22,11 @@ models.generate();
 
 // routes
 var routes = require('./routes');
+var address = require('./routes/address');
 var basketball = require('./routes/basketball');
+var isAdmin = routes.isAdmin;
 var isLoggedIn = routes.isLoggedIn;
+var isMod = routes.isMod;
 
 // all environments
 app.configure(function() {
@@ -61,8 +64,15 @@ app.get('/signup', routes.signup);				// signup page
 app.post('/loginUser', routes.loginUser);		// user login
 app.post('/signupUser', routes.signupUser);		// user signup
 
+app.get('/Admin', isLoggedIn, isAdmin, routes.admin);
 
-app.get('/AddressBook', isLoggedIn, routes.addressBook);
+// Address Book
+app.get('/AddressBook', isLoggedIn, address.index);
+app.get('/AddressBook/AddMember', isLoggedIn, isMod, address.addMember);
+// app.get('/AddressBook', address.index);
+// app.get('/AddressBook/AddMember', address.addMember);
+
+// Basketball
 app.get('/Basketball', basketball.schedule);
 
 

@@ -25,6 +25,7 @@ body {
 	background-color: white;
 	border-top: 2px solid;
 	border-color: rgba(213, 213, 213, 1);
+	min-height: 550px;
 }
 
 .tabs {
