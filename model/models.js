@@ -12,22 +12,24 @@ var SALT_WORK_FACTOR = 10;
 exports.generate = generate;
 
 function generate() {
-	var AddressModel = addressBook();
+	var ContactModel = contactModel();
 	var PlayerModel = player();
+	var ScheduleModel = schedule();
+	var TeamModel = team();
 	var UserModel = user();
 }
 
 
-function addressBook() {
-	var aBSchema = new Schema({
+function contactModel() {
+	var cSchema = new Schema({
 		mr			: String,
 		mrs			: String,
-		last_name	: String,
-		phone 		: String,
-		address 	: String
+		last		: String,
+		address 	: String,
+		phone 		: String
 	});
 
-	return mongoose.model('AddressBook', aBSchema);
+	return mongoose.model('Contact', cSchema);
 }
 
 function player() {

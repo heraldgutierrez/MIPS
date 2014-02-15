@@ -21,7 +21,23 @@ BODY STYLING
 	width: 600px;
 	margin: 0 auto;
 	padding: 40px;
-	background-color: red;
+}
+
+#warning {
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+
+#warning.success {
+	width: 255px;
+	background-color: #dff0d8;
+}
+
+#warning.warning {
+	width: 345px;
+	background-color: #dff0d8;
 }
 
 /*******************

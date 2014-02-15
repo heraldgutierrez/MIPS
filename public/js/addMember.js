@@ -1,6 +1,17 @@
 $(document).ready(function() {
 	var str = '';
 	var num = '';
+
+	var query = getURLParam('success');
+	if(query == 'true')
+		showSuccess();
+	else if(query == 'false') {
+
+		showWarning();
+		repopulateForm();
+	} else 
+		$('#warning').hide();
+
 	$('#telephone').keydown(function(e) {
 		if(e.which == 8) {
 			// delete ') '
@@ -28,10 +39,44 @@ $(document).ready(function() {
 	}).keyup(function() {
 		$(this).val(str);
 	});
+
+	$('#mr, #mrs, #last').focusout(function() {
+		var str = $(this).val();
+		$(this).val(str.capitalize());
+	});
 });
 
+function repopulateForm() {
+	var mr = getURLParam('mr');
+	var mrs = getURLParam('mrs');
+	var last = getURLParam('last');
+	var add = getURLParam('add');
+	var tel = getURLParam('tel');
+
+	$('#mr').val(unescape(mr));
+	$('#mrs').val(unescape(mrs));
+	$('#last').val(unescape(last));
+	$('#address').val(unescape(add));
+	$('#telephone').val(unescape(tel));
+}
+
 String.prototype.capitalize = function() {
-	this = this.toLowerCase();
-	this = this.charAt(0).toUpperCase() + this.slice(1);
-	return this;
+	var str
+	str = this.toLowerCase();
+	str = str.charAt(0).toUpperCase() + str.slice(1);
+	return str;
+}
+
+function showSuccess() {
+	var warning = "<strong>Success:</strong> Contact has been added.";
+	$('#warning').html(warning).addClass('success').delay(3000).fadeOut('slow');
+}
+
+function showWarning() {
+    var warning = "<strong>Warning:</strong> Mr and Mrs field cannot both be blank.";
+    var last = getURLParam('last');
+    if(last == '')
+    	warning = "<strong>Warning:</strong> Last name field cannot be blank.";
+    
+    $('#warning').html(warning).addClass('warning').delay(3000).fadeOut('slow');
 }

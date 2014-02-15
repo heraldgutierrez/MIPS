@@ -67,10 +67,11 @@ app.post('/signupUser', routes.signupUser);		// user signup
 app.get('/Admin', isLoggedIn, isAdmin, routes.admin);
 
 // Address Book
-app.get('/AddressBook', isLoggedIn, address.index);
-app.get('/AddressBook/AddMember', isLoggedIn, isMod, address.addMember);
-// app.get('/AddressBook', address.index);
-// app.get('/AddressBook/AddMember', address.addMember);
+// app.get('/AddressBook', isLoggedIn, address.index);
+// app.get('/AddressBook/AddMember', isLoggedIn, isMod, address.addMember);
+app.get('/AddressBook', address.index);
+app.get('/AddressBook/AddMember', address.addMember);
+app.post('/addNewContact', address.addNewContact);		// user signup
 
 // Basketball
 app.get('/Basketball', basketball.schedule);
