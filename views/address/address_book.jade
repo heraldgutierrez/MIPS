@@ -1,26 +1,21 @@
 extends layoutAddress
 
 block addressStyles
-	link(rel='stylesheet' type='text/css' href='/css/addMember.css')
+	link(rel='stylesheet' type='text/css' href='/css/addressbook.css')
 
 block scripts
-	script(src='/js/addMember.js')
+	script(src='/js/addressbook.js')
 
 block addressContent
 	center
 		h1 Members of MIPS
-		table(border='2')
-			thead
-				tr
-					th Last Name
-					th Mr.
-					th Mrs./Miss
-					th Address
-					th Telephone Number
-			tbody#members_body
-				tr
-					td Last Name
-					td Mr.
-					td Mrs
-					td Address
-					td Telephone Number
+		div.tableContainer
+			table#myContacts
+				thead
+					tr
+						th.last Last Name
+						th.mr Mr.
+						th.mrs Mrs
+						th.add Address
+						th.tel Phone Number
+				tbody

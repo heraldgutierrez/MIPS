@@ -5,8 +5,8 @@ exports.index = function(req, res) {
 	var currUser = req.session.currentUser;
 
 	res.render('address/address_book', {
-		// level	: currUser.level
-		level : 1
+		level	: currUser.level
+		// level : 1
 	});
 };
 
@@ -14,8 +14,8 @@ exports.addMember = function(req, res) {
 	var currUser = req.session.currentUser;
 
 	res.render('address/add_member', {
-		// level	: currUser.level
-		level : 1 
+		level	: currUser.level
+		// level : 1 
 	});
 	// res.send('Add Member');
 };
@@ -49,3 +49,15 @@ exports.addNewContact = function(req, res) {
 		res.redirect('/AddressBook/AddMember?' + params);
 	}
 }; // end: signup
+
+
+/**************************************
+	Database
+***************************************/
+exports.getAllContacts = function(req, res) {
+	ContactModel.find({}).sort({ last : 1 }).exec(
+		function(err, result) {
+			res.json(result);
+		}
+	);
+};
