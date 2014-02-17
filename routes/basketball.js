@@ -7,12 +7,9 @@ exports.schedule = function(req, res) {
 	});
 };
 
-exports.schedule2 = function(req, res) {
-	res.render('basketball/schedule2', {
-		title	: 'MIPS Winnipeg - Basketball Schedule'
-	});
-};
+exports.updateSchedule = function(req, res) {
 
+};
 
 /**************************************
 	Database

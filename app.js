@@ -78,13 +78,18 @@ app.get('/MembersOfMIPS/AddMember', isLoggedIn, isMod, members.addMember);
 app.post('/addNewContact', members.addNewContact);		// user signup
 app.get('/getAllContacts', members.getAllContacts);
 
-// Basketball
+/*********************************************************/
+// Basketball Pages
 app.get('/Basketball', basketball.schedule);
 app.get('/Basketball/Schedule', basketball.schedule);
+
+
+// Basketball DB
 // app.get('/getScheduleByYear/:season', basketball.getScheduleByYear);
 app.get('/getScheduleByYear', basketball.getScheduleByYear);
 app.get('/getScheduleByWeek', basketball.getScheduleByWeek);
 app.get('/getTeams', basketball.getTeams);
+
 
 
 server.listen(app.get('port'), function() {
