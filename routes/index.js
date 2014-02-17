@@ -31,7 +31,7 @@ exports.isAdmin = function(req, res, next) {
 	if(currUser.level == 1)
 		next();
 	else
-		res.redirect('/login');
+		res.redirect('/MembersOfMIPS');
 };
 
 exports.isLoggedIn = function(req, res, next) {
@@ -47,7 +47,7 @@ exports.isMod = function(req, res, next) {
 	if(currUser.level < 3)
 		next();
 	else
-		res.redirect('/login');
+		res.redirect('/MembersOfMIPS');
 };
 
 exports.loginUser = function(req, res) {

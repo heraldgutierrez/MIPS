@@ -20,6 +20,10 @@ mongoose.connect(mongoDBConnect);
 var models = require('./model/models');
 models.generate();
 
+// populate database
+var populate = require('./model/populate');
+populate.tryPopulate();
+
 // routes
 var routes = require('./routes');
 var members = require('./routes/members');
@@ -68,7 +72,7 @@ app.get('/Admin', isLoggedIn, isAdmin, routes.admin);
 
 // Address Book
 app.get('/MembersOfMIPS', isLoggedIn, members.index);
-app.get('/MembersOfMIPS/AddMember', isLoggedIn, members.addMember);
+app.get('/MembersOfMIPS/AddMember', isLoggedIn, isMod, members.addMember);
 // app.get('/MembersOfMIPS', members.index);
 // app.get('/MembersOfMIPS/AddMember', members.addMember);
 app.post('/addNewContact', members.addNewContact);		// user signup
@@ -76,6 +80,11 @@ app.get('/getAllContacts', members.getAllContacts);
 
 // Basketball
 app.get('/Basketball', basketball.schedule);
+app.get('/Basketball/Schedule', basketball.schedule);
+// app.get('/getScheduleByYear/:season', basketball.getScheduleByYear);
+app.get('/getScheduleByYear', basketball.getScheduleByYear);
+app.get('/getScheduleByWeek', basketball.getScheduleByWeek);
+app.get('/getTeams', basketball.getTeams);
 
 
 server.listen(app.get('port'), function() {

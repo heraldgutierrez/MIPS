@@ -1,398 +1,113 @@
 extends ../layout
-title MIPS - 2014 Basketball Tournament
 
 block styles
-	link(rel='stylesheet' type='text/css' href='css/schedule.css')
+	link(rel='stylesheet' type='text/css' href='/css/table.css')
+	link(rel='stylesheet' type='text/css' href='/css/schedule.css')
+
+block scripts
+	script(src='/js/schedule.js')
 
 block content
-	center
-		h1 2014 MIPS Basketball Tournament
-		h4 (This website will be updated to show game schedules, team standings, and team/player stats)
+	div.tableContainer
+		center
+			h1 2014 MIPS Basketball Tournament
 
-		h2 
-			u Team Schedule
-		table
-			thead
-				tr
-					th Week
-					th Date
-					th Game
-					th Time
-					th Home
-					th Score
-					th Visitor
-					th Score
+			h2 
+				u Regular Season
+
+			div#divNarrow
+				span Narrow Schedule by Team : 
+				select#narrowSchedule
+					option(value='All') Show All Teams
+					option(value='Black') Black
+					option(value='Blue') Blue
+					option(value='Green') Green
+					option(value='Red') Red
+					option(value='White') White
+					option(value='Yellow') Yellow
+
+			table#schedule
+				thead
+					tr
+						th Week
+						th Date
+						th Game
+						th Time
+						th Home
+						th Score
+						th Visitor
+						th Score
+						
+				tbody
+
+
+			br
+			br
+			h2 
+				u Playoffs
+			table
+				thead
+					tr
+						th Week
+						th Date
+						th Game
+						th Time
+						th Home
+						th Score
+						th Visitor
+						th Score
+				tbody
+					tr.semi
+						td(colspan='8') Quarter-Finals
+					tr
+						td 11
+						td April 12
+						td 
+						td 
+						td(colspan='4') Team Standing 1 and 2 has a bye
+					tr
+						td 
+						td 
+						td 1
+						td 1 pm
+						td(colspan='4') Team Standing 3 vs 6 (Winner Advance)
+					tr
+						td 
+						td 
+						td 2
+						td 2:30 pm
+						td(colspan='4') Team Standing 4 vs 5 (Winner Advance)
 					
-			tbody
-				tr
-					td 1
-					td Feb. 1
-					td 1
-					td 2 pm
-					td.winner White
-					td 54
-					td Green
-					td 38
-				tr
-					td 
-					td 
-					td 2
-					td 3 pm
-					td.winner Black
-					td 34
-					td Yellow
-					td 33
-				tr
-					td 
-					td 
-					td 3
-					td 4 pm
-					td.winner Blue
-					td 47
-					td Red
-					td 35
+					tr.odd
+						td(colspan='8' height='87px') April 19 - NO GAMES!
 
-				tr.odd
-					td 2
-					td Feb. 8
-					td 1
-					td 1 pm
-					td Black
-					td 37
-					td.winner Red
-					td 45
-				tr.odd
-					td 
-					td 
-					td 2
-					td 2 pm
-					td.winner Blue
-					td 51
-					td White
-					td 30
-				tr.odd
-					td 
-					td 
-					td 3
-					td 3 pm
-					td.winner Yellow
-					td 40
-					td Green
-					td 25
+					tr.semi
+						td(colspan='8') Semi-Finals
+					tr
+						td 12
+						td April 26
+						td 1
+						td 1 pm
+						td(colspan='4') Winner from game 2 vs 2
+					tr
+						td 
+						td 
+						td 2
+						td 2:30 pm
+						td(colspan='4') Winner from game 1 vs 1
 
-				tr
-					td 3
-					td Feb. 15
-					td 1
-					td 1 pm
-					td Green
-					td 23
-					td.winner Blue
-					td 35
-				tr
-					td 
-					td 
-					td 2
-					td 2 pm
-					td Yellow
-					td 24
-					td.winner Red
-					td 31
-				tr
-					td 
-					td 
-					td 3
-					td 3 pm
-					td Black
-					td 46
-					td.winner White
-					td 57
-
-				tr.odd
-					td 4
-					td Feb 22
-					td 1
-					td 1 pm
-					td White
-					td 
-					td Yellow
-					td 
-				tr.odd
-					td 
-					td 
-					td 2
-					td 2 pm
-					td Black
-					td 
-					td Blue
-					td 
-				tr.odd
-					td 
-					td 
-					td 3
-					td 3 pm
-					td Red
-					td 
-					td Green
-					td 
-
-				tr
-					td 5
-					td March 1
-					td 1
-					td 1 pm
-					td Green
-					td 
-					td Black
-					td 
-				tr
-					td 
-					td 
-					td 2
-					td 2 pm
-					td White
-					td 
-					td Red
-					td 
-				tr
-					td 
-					td 
-					td 3
-					td 3 pm
-					td Yellow
-					td 
-					td Blue
-					td 
-
-				tr.odd
-					td 6
-					td March 8
-					td 1
-					td 1 pm
-					td Red
-					td 
-					td Yellow
-					td 
-				tr.odd
-					td 
-					td 
-					td 2
-					td 2 pm
-					td White
-					td 
-					td Black
-					td 
-				tr.odd
-					td 
-					td 
-					td 3
-					td 3 pm
-					td Blue
-					td 
-					td Green
-					td 
-
-				tr
-					td 7
-					td March 15
-					td 1
-					td 1 pm
-					td Green
-					td 
-					td White
-					td 
-				tr
-					td 
-					td 
-					td 2
-					td 2 pm
-					td Yellow
-					td 
-					td Black
-					td 
-				tr
-					td 
-					td 
-					td 3
-					td 3 pm
-					td Red
-					td 
-					td Blue
-					td 
-
-				tr.odd
-					td 8
-					td March 22
-					td 1
-					td 1 pm
-					td Blue
-					td 
-					td Black
-					td 
-				tr.odd
-					td 
-					td 
-					td 2
-					td 2 pm
-					td Green
-					td 
-					td Red
-					td 
-				tr.odd
-					td 
-					td 
-					td 3
-					td 3 pm
-					td Yellow
-					td 
-					td White
-					td 
-
-				tr
-					td 9
-					td March 29
-					td 1
-					td 1 pm
-					td Yellow
-					td 
-					td Green
-					td 
-				tr
-					td 
-					td 
-					td 2
-					td 2 pm
-					td Red
-					td 
-					td Black
-					td 
-				tr
-					td 
-					td 
-					td 3
-					td 3 pm
-					td Blue
-					td 
-					td White
-					td 
-
-				tr.odd
-					td 10
-					td April 5
-					td 1
-					td 1 pm
-					td White
-					td 
-					td Red
-					td 
-				tr.odd
-					td 
-					td 
-					td 2
-					td 2 pm
-					td Yellow
-					td 
-					td Blue
-					td 
-				tr.odd
-					td 
-					td 
-					td 3
-					td 3 pm
-					td Black
-					td 
-					td Green
-					td 
-
-				tr
-					td &nbsp;
-				tr
-					td &nbsp;
-				tr.header
-					td(colspan='8') 
-						u Playoffs
-				tr.header
-					td Week
-					td Date
-					td Game
-					td Time
-					td Home
-					td Score
-					td Visitor
-					td Score
-
-				tr.semi
-					td(colspan='8') Quarter-Finals
-				tr
-					td 11
-					td April 12
-					td 
-					td 
-					td(colspan='4') Team Standing 1 and 2 has a bye
-				tr
-					td 
-					td 
-					td 1
-					td 1 pm
-					td(colspan='4') Team Standing 3 vs 6 (Winner Advance)
-				tr
-					td 
-					td 
-					td 2
-					td 2:30 pm
-					td(colspan='4') Team Standing 4 vs 5 (Winner Advance)
-				
-
-				tr.odd
-					td &nbsp;
-					td 
-					td 
-					td 
-					td 
-					td 
-					td 
-					td 
-				tr.odd
-					td 
-					td 
-					td 
-					td April 19
-					td NO GAMES!
-					td 
-					td 
-					td 
-				tr.odd
-					td &nbsp;
-					td 
-					td 
-					td 
-					td 
-					td 
-					td 
-					td 
-
-				tr.semi
-					td(colspan='8') Semi-Finals
-				tr
-					td 12
-					td April 26
-					td 1
-					td 1 pm
-					td(colspan='4') Winner from game 2 vs 2
-				tr
-					td 
-					td 
-					td 2
-					td 2:30 pm
-					td(colspan='4') Winner from game 1 vs 1
-
-				tr.odd.semi
-					td(colspan='8') Championship
-				tr.odd
-					td 13
-					td May 3
-					td 
-					td 1 pm
-					td(colspan='4') Week 12 Winners
-				tr.odd
-					td(colspan='8') Award Ceremony
+					tr.odd.semi
+						td(colspan='8') Championship
+					tr.odd
+						td 13
+						td May 3
+						td 
+						td 1 pm
+						td(colspan='4') Week 12 Winners
+					tr.odd
+						td
+						td
+						td 
+						td 2:30 pm
+						td(colspan='4') Award Ceremony
+		br

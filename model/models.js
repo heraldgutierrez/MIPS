@@ -73,7 +73,7 @@ function schedule() {
 function team() {
 	var TSchema = new Schema({
 		team 		: String,
-		year 		: Number,
+		season 		: Number,
 		wins		: { type : Number, default : 0 },
 		losses		: { type : Number, default : 0 },
 		players 	: [ 

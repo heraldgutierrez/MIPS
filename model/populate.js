@@ -18,7 +18,7 @@ function tryPopulate() {
 function populateSchedule() {
 	console.log('Starting: Populating Schedule...');
 	var schedules = [
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 1,
 			date 	: new Date('Feb 1, 2014'),
@@ -49,7 +49,7 @@ function populateSchedule() {
 				}
 			]
 		}),
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 2,
 			date 	: new Date('Feb 8, 2014'),
@@ -80,7 +80,7 @@ function populateSchedule() {
 				}
 			]
 		}),
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 3,
 			date 	: new Date('Feb 15, 2014'),
@@ -89,23 +89,29 @@ function populateSchedule() {
 					game 	: 1,
 					time 	: '1 pm',
 					home 	: 'Green',
+					homeScore : 23,
 					away 	: 'Blue',
+					awayScore : 35
 				},
 				{
 					game 	: 2,
 					time 	: '2 pm',
 					home 	: 'Yellow',
+					homeScore : 24,
 					away 	: 'Red',
+					awayScore : 31
 				},
 				{
 					game 	: 3,
 					time 	: '3 pm',
 					home 	: 'Black',
+					homeScore : 46,
 					away 	: 'White',
+					awayScore : 57
 				}
 			]
 		}),
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 4,
 			date 	: new Date('Feb 22, 2014'),
@@ -130,7 +136,7 @@ function populateSchedule() {
 				}
 			]
 		}),
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 5,
 			date 	: new Date('March 1, 2014'),
@@ -138,24 +144,24 @@ function populateSchedule() {
 				{
 					game 	: 1,
 					time 	: '1 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Green',
+					away 	: 'Black',
 				},
 				{
 					game 	: 2,
 					time 	: '2 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'White',
+					away 	: 'Red',
 				},
 				{
 					game 	: 3,
 					time 	: '3 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Yellow',
+					away 	: 'Blue',
 				}
 			]
 		}),
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 6,
 			date 	: new Date('March 8, 2014'),
@@ -163,24 +169,24 @@ function populateSchedule() {
 				{
 					game 	: 1,
 					time 	: '1 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Red',
+					away 	: 'Yellow',
 				},
 				{
 					game 	: 2,
 					time 	: '2 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'White',
+					away 	: 'Black',
 				},
 				{
 					game 	: 3,
 					time 	: '3 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Blue',
+					away 	: 'Green',
 				}
 			]
 		}),
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 7,
 			date 	: new Date('March 15, 2014'),
@@ -188,24 +194,24 @@ function populateSchedule() {
 				{
 					game 	: 1,
 					time 	: '1 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Green',
+					away 	: 'White',
 				},
 				{
 					game 	: 2,
 					time 	: '2 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Yellow',
+					away 	: 'Black',
 				},
 				{
 					game 	: 3,
 					time 	: '3 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Red',
+					away 	: 'Blue',
 				}
 			]
 		}),
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 8,
 			date 	: new Date('March 22, 2014'),
@@ -213,24 +219,24 @@ function populateSchedule() {
 				{
 					game 	: 1,
 					time 	: '1 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Blue',
+					away 	: 'Black',
 				},
 				{
 					game 	: 2,
 					time 	: '2 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Green',
+					away 	: 'Red',
 				},
 				{
 					game 	: 3,
 					time 	: '3 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Yellow',
+					away 	: 'White',
 				}
 			]
 		}),
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 9,
 			date 	: new Date('March 29, 2014'),
@@ -238,24 +244,24 @@ function populateSchedule() {
 				{
 					game 	: 1,
 					time 	: '1 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Yellow',
+					away 	: 'Green',
 				},
 				{
 					game 	: 2,
 					time 	: '2 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Red',
+					away 	: 'Black',
 				},
 				{
 					game 	: 3,
 					time 	: '3 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Blue',
+					away 	: 'White',
 				}
 			]
 		}),
-		new Schema({
+		new ScheduleModel({
 			season	: 2014,
 			week	: 10,
 			date 	: new Date('April 5, 2014'),
@@ -263,100 +269,23 @@ function populateSchedule() {
 				{
 					game 	: 1,
 					time 	: '1 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'White',
+					away 	: 'Red',
 				},
 				{
 					game 	: 2,
 					time 	: '2 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Yellow',
+					away 	: 'Blue',
 				},
 				{
 					game 	: 3,
 					time 	: '3 pm',
-					home 	: '',
-					away 	: '',
+					home 	: 'Black',
+					away 	: 'Green',
 				}
 			]
-		}),
-		new Schema({
-			season	: 2014,
-			week	: 11,
-			date 	: new Date('April 12, 2014'),
-			games 	: [
-				{
-					game 	: 1,
-					time 	: '1 pm',
-					home 	: '',
-					away 	: '',
-				},
-				{
-					game 	: 2,
-					time 	: '2 pm',
-					home 	: '',
-					away 	: '',
-				},
-				{
-					game 	: 3,
-					time 	: '3 pm',
-					home 	: '',
-					away 	: '',
-				}
-			]
-		}),
-		new Schema({
-			season	: 2014,
-			week	: 12,
-			date 	: new Date('April 26, 2014'),
-			games 	: [
-				{
-					game 	: 1,
-					time 	: '1 pm',
-					home 	: '',
-					away 	: '',
-				},
-				{
-					game 	: 2,
-					time 	: '2 pm',
-					home 	: '',
-					away 	: '',
-				},
-				{
-					game 	: 3,
-					time 	: '3 pm',
-					home 	: '',
-					away 	: '',
-				}
-			]
-		}),
-		new Schema({
-			season	: 2014,
-			week	: 13,
-			date 	: new Date('May 3, 2014'),
-			games 	: [
-				{
-					game 	: 1,
-					time 	: '1 pm',
-					home 	: '',
-					away 	: '',
-				},
-				{
-					game 	: 2,
-					time 	: '2 pm',
-					home 	: '',
-					away 	: '',
-				},
-				{
-					game 	: 3,
-					time 	: '3 pm',
-					home 	: '',
-					away 	: '',
-				}
-			]
-		}),
-		
-		
+		})
 	];
 
 	for(var i = 0; i < schedules.length; i++) {
