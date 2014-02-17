@@ -4,7 +4,8 @@ var ContactModel = mongoose.model('Contact');
 exports.index = function(req, res) {
 	var currUser = req.session.currentUser;
 
-	res.render('address/address_book', {
+	res.render('members/members', {
+		title	: 'MIPS Winnipeg - Members of MIPS',
 		level	: currUser.level
 		// level : 1
 	});
@@ -13,11 +14,11 @@ exports.index = function(req, res) {
 exports.addMember = function(req, res) {
 	var currUser = req.session.currentUser;
 
-	res.render('address/add_member', {
+	res.render('members/add_member', {
+		title	: 'MIPS Winnipeg - Add a New Member',
 		level	: currUser.level
 		// level : 1 
 	});
-	// res.send('Add Member');
 };
 
 exports.addNewContact = function(req, res) {
@@ -37,7 +38,7 @@ exports.addNewContact = function(req, res) {
 		});
 
 		contact.save(function(err, result) {
-			res.redirect('/AddressBook/AddMember?success=true');
+			res.redirect('/MembersOfMIPS/AddMember?success=true');
 		});
 	} else {
 		var params = 'success=false&';
@@ -46,7 +47,7 @@ exports.addNewContact = function(req, res) {
 		params += 'last=' + last +'&';
 		params += 'add=' + address +'&';
 		params += 'tel=' + phone;
-		res.redirect('/AddressBook/AddMember?' + params);
+		res.redirect('/MembersOfMIPS/AddMember?' + params);
 	}
 }; // end: signup
 

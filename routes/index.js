@@ -14,11 +14,15 @@ exports.admin = function(req, res) {
 };
 
 exports.login = function(req, res) {
-	res.render('login');
+	res.render('login', {
+		title	: 'MIPS Winnipeg - Login'
+	});
 };
 
 exports.signup = function(req, res) {
-	res.render('signup');
+	res.render('signup', {
+		title	: 'MIPS Winnipeg - Sign Up'
+	});
 };
 
 exports.isAdmin = function(req, res, next) {
@@ -66,7 +70,7 @@ exports.loginUser = function(req, res) {
 
 					if(isMatch) {
 						req.session.currentUser = user;
-						res.redirect('/AddressBook');
+						res.redirect('/MembersOfMIPS');
 					} else {
 						res.redirect('/login?warning=incorrect');
 					}
@@ -99,7 +103,7 @@ exports.signupUser = function(req, res) {
 						req.session.currentUser = newUser;
 
 						console.log(name + ' has been added.');
-						res.redirect('/AddressBook');
+						res.redirect('/MembersOfMIPS');
 					});
 				} else {
 					// reload home page with warning that username already exists

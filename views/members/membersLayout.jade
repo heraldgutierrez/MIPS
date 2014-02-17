@@ -1,8 +1,8 @@
 extends ../layout
 
 block styles
-	link(rel='stylesheet' type='text/css' href='/css/address_layout.css')
-	block addressStyles
+	link(rel='stylesheet' type='text/css' href='/css/members_layout.css')
+	block membersStyles
 
 block content
 	div.navbar-container
@@ -13,12 +13,12 @@ block content
 						li#li_Admin 
 							a(href='/Admin') Admin
 						li.divider-vertical
-					li#li_Address
-						a(href='/AddressBook') Address Book
+					li#li_Members
+						a(href='/MembersOfMIPS') Members
 					if level < 3
 						li.divider-vertical
 						li#li_AddMember
-							a(href='/AddressBook/AddMember') Add New Member
+							a(href='/MembersOfMIPS/AddMember') Add New Member
 
-	div#addressContainer
-		block addressContent
+	div#membersContainer
+		block membersContent

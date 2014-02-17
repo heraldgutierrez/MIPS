@@ -4,7 +4,7 @@ html
 		meta(name='description' content='MIPS')
 		meta(name='keywords' content='HTML, CSS, JavaScript, jQuery, NodeJS, Jade, ExpressJS')
 
-		title MIPS Winnipeg
+		title= title
 		
 		link(rel='stylesheet' type='text/css' href='/css/styles.css')
 		block styles
@@ -30,7 +30,7 @@ html
 					img(src='/img/mips-logo.png')
 			section.tabs
 				a.tabHome(href='/') Home
-				a.tabAddressBook(href='/AddressBook') Address Book
+				a.tabMembers(href='/MembersOfMIPS') Members of MIPS
 				a.tabBasketball(href='/Basketball') Basketball
 		div.main-container
 			block content

@@ -22,7 +22,7 @@ models.generate();
 
 // routes
 var routes = require('./routes');
-var address = require('./routes/address');
+var members = require('./routes/members');
 var basketball = require('./routes/basketball');
 var isAdmin = routes.isAdmin;
 var isLoggedIn = routes.isLoggedIn;
@@ -67,12 +67,12 @@ app.post('/signupUser', routes.signupUser);		// user signup
 app.get('/Admin', isLoggedIn, isAdmin, routes.admin);
 
 // Address Book
-app.get('/AddressBook', isLoggedIn, address.index);
-app.get('/AddressBook/AddMember', isLoggedIn, address.addMember);
-// app.get('/AddressBook', address.index);
-// app.get('/AddressBook/AddMember', address.addMember);
-app.post('/addNewContact', address.addNewContact);		// user signup
-app.get('/getAllContacts', address.getAllContacts);
+app.get('/MembersOfMIPS', isLoggedIn, members.index);
+app.get('/MembersOfMIPS/AddMember', isLoggedIn, members.addMember);
+// app.get('/MembersOfMIPS', members.index);
+// app.get('/MembersOfMIPS/AddMember', members.addMember);
+app.post('/addNewContact', members.addNewContact);		// user signup
+app.get('/getAllContacts', members.getAllContacts);
 
 // Basketball
 app.get('/Basketball', basketball.schedule);
