@@ -36,7 +36,10 @@ body {
 }
 
 .tabs a {
-	background: -webkit-linear-gradient(bottom, #ededed 0%,#ddd 100%);
+	background: -webkit-linear-gradient(bottom, #ededed 0%, #ddd 100%); /* Chrome and Safari */
+	background: -moz-linear-gradient(top, #ededed 0%, #ddd 100%); 		/* FF3.6+ */
+	background: -ms-linear-gradient(top, #ededed 0%, #ddd 100%); 		/* IE10+ */
+
 	height: 40px;
 	font: 16px/40px sans-serif;
 	position: relative;
