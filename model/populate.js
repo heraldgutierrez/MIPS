@@ -21,7 +21,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 1,
-			date 	: new Date('Feb 1, 2014'),
+			date 	: 'February 1, 2014',
 			games 	: [
 				{
 					game 	: 1,
@@ -52,7 +52,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 2,
-			date 	: new Date('Feb 8, 2014'),
+			date 	: 'February 8, 2014',
 			games 	: [
 				{
 					game 	: 1,
@@ -83,7 +83,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 3,
-			date 	: new Date('Feb 15, 2014'),
+			date 	: 'February 15, 2014',
 			games 	: [
 				{
 					game 	: 1,
@@ -114,7 +114,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 4,
-			date 	: new Date('Feb 22, 2014'),
+			date 	: 'February 22, 2014',
 			games 	: [
 				{
 					game 	: 1,
@@ -139,7 +139,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 5,
-			date 	: new Date('March 1, 2014'),
+			date 	: 'March 1, 2014',
 			games 	: [
 				{
 					game 	: 1,
@@ -164,7 +164,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 6,
-			date 	: new Date('March 8, 2014'),
+			date 	: 'March 8, 2014',
 			games 	: [
 				{
 					game 	: 1,
@@ -189,7 +189,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 7,
-			date 	: new Date('March 15, 2014'),
+			date 	: 'March 15, 2014',
 			games 	: [
 				{
 					game 	: 1,
@@ -214,7 +214,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 8,
-			date 	: new Date('March 22, 2014'),
+			date 	: 'March 22, 2014',
 			games 	: [
 				{
 					game 	: 1,
@@ -239,7 +239,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 9,
-			date 	: new Date('March 29, 2014'),
+			date 	: 'March 29, 2014',
 			games 	: [
 				{
 					game 	: 1,
@@ -264,7 +264,7 @@ function populateSchedule() {
 		new ScheduleModel({
 			season	: 2014,
 			week	: 10,
-			date 	: new Date('April 5, 2014'),
+			date 	: 'April 5, 2014',
 			games 	: [
 				{
 					game 	: 1,

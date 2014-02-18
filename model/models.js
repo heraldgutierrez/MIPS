@@ -54,7 +54,7 @@ function schedule() {
 	var SSchema = new Schema({
 		season	: Number,
 		week	: Number,
-		date 	: Date,
+		date 	: String,
 		games 	: [
 			{
 				game 	: Number,

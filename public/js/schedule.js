@@ -22,8 +22,6 @@ function updateTable(schedule) {
 	if(schedule.length != 0) {
 		$.each(schedule, function(i, week) {
 			var wGames = week.games;
-			var date = new Date(week.date);
-			date = date.getShortDate();
 			var hs, as;
 
 			for(var j = 0; j < wGames.length; j++) {
@@ -33,7 +31,7 @@ function updateTable(schedule) {
 				row = '<tr>';
 
 				row += '<td>' + week.week + '</td>';
-				row += '<td>' + date + '</td>';
+				row += '<td>' + week.date + '</td>';
 				row += '<td>' + wGames[j].game + '</td>';
 				row += '<td>' + wGames[j].time + '</td>';
 
@@ -100,7 +98,7 @@ Date.prototype.getShortDate = function() {
     "July", "August", "September", "October", "November", "December" ];
 
 	var yyyy = this.getFullYear();
-	var mm = (this.getMonth()); 
+	var mm = this.getMonth(); 
 	var dd  = this.getDate();
 
 	return monthNames[mm] + ' ' + dd + ', ' + yyyy;
