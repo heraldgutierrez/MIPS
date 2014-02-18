@@ -40,7 +40,7 @@ $(document).ready(function() {
 		$(this).val(str);
 	});
 
-	$('#mr, #mrs, #last').focusout(function() {
+	$('#mr, #mrs, #last, #children').focusout(function() {
 		var str = $(this).val();
 		$(this).val(str.capitalize());
 	});
@@ -50,12 +50,14 @@ function repopulateForm() {
 	var mr = getURLParam('mr');
 	var mrs = getURLParam('mrs');
 	var last = getURLParam('last');
+	var child = getURLParam('children');
 	var add = getURLParam('add');
 	var tel = getURLParam('tel');
 
 	$('#mr').val(unescape(mr));
 	$('#mrs').val(unescape(mrs));
 	$('#last').val(unescape(last));
+	$('#children').val(unescape(child));
 	$('#address').val(unescape(add));
 	$('#telephone').val(unescape(tel));
 }

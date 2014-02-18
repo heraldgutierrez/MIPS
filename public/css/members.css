@@ -1,7 +1,8 @@
-table tr th.last { width: 20%; }
-table tr th.mr { width: 20%; }
-table tr th.mrs { width: 20%; }
-table tr th.add { width: 25%; }
-table tr th.tel { width: 15%; }
+table tr th.last 	{ width: 18%; }
+table tr th.mr 		{ width: 15%; }
+table tr th.mrs 	{ width: 15%; }
+table tr th.child 	{ width: 22%; }
+table tr th.add 	{ width: 15%; }
+table tr th.tel 	{ width: 15%; }
 
 table tr td.noContacts { padding: 10px; }

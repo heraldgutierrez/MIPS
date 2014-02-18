@@ -21,6 +21,7 @@ function updateTable(members) {
 			row += '<td>' + user.last + '</td>';
 			row += '<td>' + user.mr + '</td>';
 			row += '<td>' + user.mrs + '</td>';
+			row += '<td>' + user.children + '</td>';
 			row += '<td>' + user.address + '</td>';
 			row += '<td>' + user.phone +'</td>';
 			row += '</tr>';
@@ -29,7 +30,7 @@ function updateTable(members) {
 		});
 	} else {
 		row = '<tr>';
-		row += '<td class="noContacts" colspan="5">No Contacts in the Address Book</td>';
+		row += '<td class="noContacts" colspan="6">No Contacts in the Address Book</td>';
 		row += '</tr>';
 
 		$('#myContacts tbody').append(row);

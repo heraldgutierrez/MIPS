@@ -25,6 +25,7 @@ function contactModel() {
 		mr			: String,
 		mrs			: String,
 		last		: String,
+		children	: String,
 		address 	: String,
 		phone 		: String
 	});

@@ -25,6 +25,7 @@ exports.addNewContact = function(req, res) {
 	var mr = req.body.mr;
 	var mrs = req.body.mrs;
 	var last = req.body.last;
+	var children = req.body.children;
 	var address = req.body.address;
 	var phone = req.body.phone;
 
@@ -33,6 +34,7 @@ exports.addNewContact = function(req, res) {
 			mr			: mr,
 			mrs			: mrs,
 			last		: last,
+			children	: children,
 			address 	: address,
 			phone 		: phone
 		});
@@ -45,6 +47,7 @@ exports.addNewContact = function(req, res) {
 		params += 'mr=' + mr +'&';
 		params += 'mrs=' + mrs +'&';
 		params += 'last=' + last +'&';
+		params += 'children=' + children + '&';
 		params += 'add=' + address +'&';
 		params += 'tel=' + phone;
 		res.redirect('/MembersOfMIPS/AddMember?' + params);
