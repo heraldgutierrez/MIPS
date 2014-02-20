@@ -1,0 +1,38 @@
+extends layoutBasketball
+
+block basketballStyles
+	link(rel='stylesheet' type='text/css' href='/css/table.css')
+
+block basketballScripts
+	script(src='/js/teamStats.js')
+
+block basketballContent
+	div.tableContainer
+		center
+			h1 #{team} Team Stats
+
+			h2#record Record:
+			table#teamStats(data-team='#{team}')
+				thead
+					tr
+						th Week
+						th Date
+						th Opponent
+						th Score
+				tbody
+
+			br
+			br
+			table#teamPlayers
+				thead
+					tr
+						th Player
+						th Number
+						th Average Points
+						th Total Points
+						th Average Fouls
+						th Total Fouls
+						th Average Starts
+						th Total Starts
+				tbody
+			br

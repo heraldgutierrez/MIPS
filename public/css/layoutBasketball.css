@@ -1,0 +1,28 @@
+.nav {
+	position: relative;
+	display: inline-table;
+}
+
+.nav ul {
+	display: none;
+	position: relative;
+	top: -7px;
+	list-style-type: none;
+}
+
+	.nav li:hover > ul {
+		display: block;
+		background-color: #777;
+		padding: 5px;
+	}
+	.nav li:hover > ul a {
+		display: block;
+		margin: 5px;
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.nav li:hover > ul a:hover {
+		background-color: transparent;
+		color: black;
+	}

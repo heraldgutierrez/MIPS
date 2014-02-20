@@ -1,0 +1,36 @@
+extends layoutBasketball
+
+block basketballStyles
+	link(rel='stylesheet' type='text/css' href='/css/table.css')
+	link(rel='stylesheet' type='text/css' href='/css/allPlayerStats.css')
+
+
+block basketballScripts
+	script(src='/js/allPlayerStats.js')
+
+block basketballContent
+	div.tableContainer
+		center
+			h1 All Players
+
+			div#divSearch
+				span Search : 
+				input#inputSearch(type='text' placeholder=' Enter Name ')
+
+			table#players(data-player='#{player}')
+				thead
+					tr
+						th Player
+						th Team
+						th Number
+						th Average Points
+						th Total Points
+						th Average Fouls
+						th Total Fouls
+						th Average Starts
+						th Total Starts
+							
+				tbody
+					tr#empty.empty
+						td(colspan='9') No Players Found.
+		br

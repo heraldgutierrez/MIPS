@@ -25,8 +25,8 @@ table tr:first-child th {
 	padding: 10px;
 }
 
-table tr:nth-child(odd) { background-color:#cccccc; }
-table tr:nth-child(even) { background-color:#ffffff; }
+table tr:nth-child(even) { background-color:#cccccc; }
+table tr:nth-child(odd) { background-color:#ffffff; }
 table tr:hover td { background-color: #999; }
 
 /* First row: top left corner */

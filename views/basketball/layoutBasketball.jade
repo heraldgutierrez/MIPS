@@ -1,0 +1,32 @@
+extends ../layout
+
+block styles
+	link(rel='stylesheet' type='text/css' href='/css/members_layout.css')
+	link(rel='stylesheet' type='text/css' href='/css/layoutBasketball.css')
+	block basketballStyles
+
+block scripts
+	script(src='/js/layoutBasketball.js')
+	block basketballScripts
+
+
+block content
+	div.navbar-container
+		div.navbar
+			div.navbar-inner
+				ul.nav
+					li#li_Schedule 
+						a(href='/Basketball') Schedule
+					li.divider-vertical
+					li#li_Standings
+						a(href='/Basketball/Standings') League Standings
+					li.divider-vertical
+					li#li_TeamStats
+						a(href='#') Team Stats
+						ul#ul_Teams
+					li.divider-vertical
+					li#li_Players
+						a(href='/Basketball/AllPlayers') Players
+
+	div#membersContainer
+		block basketballContent

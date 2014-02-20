@@ -35,15 +35,18 @@ function contactModel() {
 
 function player() {
 	var PSchema = new Schema({
+		season		: Number,
 		team 		: String,
 		name 		: String,
 		number 		: String,
 		stats 		: [
 			{
 				week 	: Number,
+				date	: String,
 				opp 	: String,
 				points 	: Number,
-				fouls 	: Number
+				fouls 	: Number,
+				started : Boolean
 			}
 		]
 	});
@@ -77,20 +80,15 @@ function team() {
 		season 		: Number,
 		wins		: { type : Number, default : 0 },
 		losses		: { type : Number, default : 0 },
-		players 	: [ 
-			{ 
-				name 	: String,
-				number 	: String
-			} 
-		],
 		games		: [
 			{
 				week		: Number,
-				date 		: Date,
+				date 		: String,
+				home 		: Boolean,
 				opp			: String,
 				teamScore 	: Number,
 				oppScore	: Number,
-				winner 		: String
+				winner 		: Boolean
 			}
 		]
 	});

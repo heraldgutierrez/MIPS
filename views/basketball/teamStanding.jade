@@ -1,0 +1,22 @@
+extends layoutBasketball
+
+block basketballStyles
+	link(rel='stylesheet' type='text/css' href='/css/table.css')
+
+block basketballScripts
+	script(src='/js/leagueStanding.js')
+
+block basketballContent
+	div.tableContainer
+		center
+			h1 2014 MIPS Basketball Tournament
+
+			table#standing
+				thead
+					tr
+						th Rank
+						th Team
+						th Wins
+						th Loses
+						
+				tbody

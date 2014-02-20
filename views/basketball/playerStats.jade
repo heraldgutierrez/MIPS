@@ -1,0 +1,25 @@
+extends layoutBasketball
+
+block basketballStyles
+	link(rel='stylesheet' type='text/css' href='/css/table.css')
+
+block basketballScripts
+	script(src='/js/playerStats.js')
+
+block basketballContent
+	div.tableContainer
+		center
+			h1 #{player}
+
+			table#player(data-player='#{player}')
+				thead
+					tr
+						th Week
+						th Date
+						th Opponent
+						th Points
+						th Fouls
+						th Started
+							
+				tbody
+			br

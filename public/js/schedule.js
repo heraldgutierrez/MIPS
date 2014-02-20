@@ -78,28 +78,3 @@ function narrowSchedule(team) {
 		$('#schedule tbody tr td:contains("' + team + '")').parent().show();
 	}
 }
-
-// function getTeams() {
-
-// }
-
-// function updateSelection() {
-// 	option(value='All') Show All Teams
-// 	option(value='Black') Black
-// 	option(value='Blue') Blue
-// 	option(value='Green') Green
-// 	option(value='Red') Red
-// 	option(value='White') White
-// 	option(value='Yellow') Yellow
-// }
-
-Date.prototype.getShortDate = function() {
-	var monthNames = [ "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December" ];
-
-	var yyyy = this.getFullYear();
-	var mm = this.getMonth(); 
-	var dd  = this.getDate();
-
-	return monthNames[mm] + ' ' + dd + ', ' + yyyy;
-};

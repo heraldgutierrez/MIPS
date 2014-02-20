@@ -82,13 +82,20 @@ app.get('/getAllContacts', members.getAllContacts);
 // Basketball Pages
 app.get('/Basketball', basketball.schedule);
 app.get('/Basketball/Schedule', basketball.schedule);
+app.get('/Basketball/Standings', basketball.standings);
+app.get('/Basketball/TeamStats/:team', basketball.teamStats);
+app.get('/Basketball/Player/:player', basketball.playerStats);
+app.get('/Basketball/AllPlayers', basketball.allPlayers);
 
 
 // Basketball DB
-// app.get('/getScheduleByYear/:season', basketball.getScheduleByYear);
 app.get('/getScheduleByYear', basketball.getScheduleByYear);
 app.get('/getScheduleByWeek', basketball.getScheduleByWeek);
-app.get('/getTeams', basketball.getTeams);
+app.get('/getAllTeams', basketball.getAllTeams);
+app.get('/getTeamByName', basketball.getTeamByName);
+app.get('/getPlayer', basketball.getPlayer);
+app.get('/getAllPlayers', basketball.getAllPlayers);
+app.get('/getPlayersByTeam', basketball.getPlayersByTeam);
 
 
 
