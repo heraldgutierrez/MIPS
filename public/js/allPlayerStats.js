@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	getStats();
+	$('#players').tablesorter();
 
 	$('#inputSearch').keyup(function(e){
 		var str = $(this).val();
@@ -85,6 +86,10 @@ function updateTable(players) {
 	} else {
 		$('#empty').show();
 	}
+
+	$("#players").trigger("update");
+	var sorting = [[0,0]];
+	$("#players").trigger("sorton",[sorting]);
 }
 
 $.extend($.expr[":"], {

@@ -2,6 +2,7 @@ table tr th:nth-child(1) { width: 20%; }
 table tr th:nth-child(2) { width: 10%; }
 table tr th:nth-child(3) { width: 5%; }
 table tr th:nth-child(9) { width: 5%; }
+table tr th:hover { cursor: pointer; }
 
 #divSearch {
 	position: relative;
