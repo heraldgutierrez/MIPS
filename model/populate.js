@@ -1730,7 +1730,7 @@ function populatePlayers() {
 		new PlayerModel({
 			season		: 2014,
 			team 		: 'White',
-			name 		: 'Marqueses, Miko',
+			name 		: 'Marqueses, Mike',
 			number 		: '29',
 			stats 		: [
 				{
