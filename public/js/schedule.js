@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	getSchedule();
+	fillTeams();
 
 	$('#narrowSchedule').change(function() {
 		narrowSchedule($(this).val());
@@ -17,7 +18,6 @@ function getSchedule() {
 
 function updateTable(schedule) {
 	var row;
-	var body = '';
 
 	if(schedule.length != 0) {
 		$.each(schedule, function(i, week) {
@@ -69,6 +69,32 @@ function updateTable(schedule) {
 		$('#schedule tbody').append(row);
 	}
 }
+
+function fillTeams() {
+	$.getJSON(
+		'/getAllTeams',
+		{ sort : 'rank' },
+		function(data) {
+			updateTeam(data);
+		}
+	);
+}
+
+function updateTeam(teams) {
+	var option;
+
+	if(teams.length != 0) {
+		$.each(teams, function(i, team) {
+			option = '<option value="' + team.team + '">';
+			option += team.team;
+			option += '</option>';
+
+			$('#home').append(option);
+			$('#away').append(option);
+		});
+	}
+}
+
 
 function narrowSchedule(team) {
 	if(team == 'All') {

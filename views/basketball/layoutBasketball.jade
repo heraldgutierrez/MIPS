@@ -9,12 +9,15 @@ block scripts
 	script(src='/js/layoutBasketball.js')
 	block basketballScripts
 
-
 block content
 	div.navbar-container
 		div.navbar
 			div.navbar-inner
 				ul.nav
+					if level == 1
+						li#li_UpdateSchedule
+							a(href='/Basketball/UpdateStats') Update Stats
+						li.divider-vertical
 					li#li_Schedule 
 						a(href='/Basketball') Schedule
 					li.divider-vertical

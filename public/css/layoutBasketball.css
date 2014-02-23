@@ -1,6 +1,7 @@
 .nav {
 	position: relative;
 	display: inline-table;
+	list-style-type: none;
 }
 
 .nav ul {
@@ -8,6 +9,7 @@
 	position: relative;
 	top: -7px;
 	list-style-type: none;
+	z-index: 20;
 }
 
 	.nav li:hover > ul {

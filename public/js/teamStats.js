@@ -33,9 +33,6 @@ function updateTeamTable(stats) {
 				row += '<td>' + games[j].date + '</td>';
 
 				home = games[j].home ? 'vs ' : '@ ';
-				// 	home = 'vs ';
-				// else
-				// 	home = '@ ';
 				row += '<td>' + home + games[j].opp + '</td>';
 
 				win = games[j].winner ? 'W ' : 'L ';

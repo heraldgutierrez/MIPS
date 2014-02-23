@@ -86,6 +86,7 @@ app.get('/Basketball/Standings', basketball.standings);
 app.get('/Basketball/TeamStats/:team', basketball.teamStats);
 app.get('/Basketball/Player/:player', basketball.playerStats);
 app.get('/Basketball/AllPlayers', basketball.allPlayers);
+app.get('/Basketball/UpdateStats', basketball.updateStats);
 
 
 // Basketball DB
@@ -96,6 +97,7 @@ app.get('/getTeamByName', basketball.getTeamByName);
 app.get('/getPlayer', basketball.getPlayer);
 app.get('/getAllPlayers', basketball.getAllPlayers);
 app.get('/getPlayersByTeam', basketball.getPlayersByTeam);
+app.post('/updateGameStats', isLoggedIn, isAdmin, basketball.updateGameStats);
 
 
 

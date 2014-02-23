@@ -1,0 +1,20 @@
+input {
+	text-align: center;
+	color: black;
+	font-weight: bold;
+}
+
+#wrapper {
+	width: 900px;
+}
+
+.login-form .header {
+	width: 210px;
+	margin: 0 auto;
+}
+
+.login-form .footer {
+	width: 206px;
+	margin: 0 auto;
+	padding: 25px 347px 40px 345px;
+}

@@ -1,0 +1,77 @@
+extends layoutBasketball
+
+block basketballStyles
+	link(rel='stylesheet' type='text/css' href='/css/forms.css')
+	link(rel='stylesheet' type='text/css' href='/css/table.css')
+	link(rel='stylesheet' type='text/css' href='/css/updateStats.css')
+
+block basketballScripts
+	script(src='/js/updateStats.js')
+	
+block basketballContent
+	div#wrapper
+		form.login-form(action='/updateGameStats', method='post')
+			div.header
+				h1 Add Game Stats
+			div.content.tableContainer
+				table#game
+					thead
+						tr
+							th Date
+							th Time
+							th Home Team
+							th Home Score
+							th Away Team
+							th Away Score
+					tbody
+						tr
+							td 
+								input#season(type='text' name='season' hidden)
+								input#week(type='text' name='week' hidden)
+								select#date(name='date')
+									option No Dates Available
+							td 
+								input#gameNum(type='text' name='gameNum' hidden)
+								select#time(name='time')
+									option No Times Available
+							td
+								input#homeTeam(type='text' name='homeTeam' readonly)
+								input#homeNumPlayers(type='text' name='homeNumPlayers' hidden)
+							td
+								input#homeScore(type='number' name='homeScore' min='0')
+							td
+								input#awayTeam(type='text' name='awayTeam' readonly)
+								input#awayNumPlayers(type='text' name='awayNumPlayers' hidden)
+							td
+								input#awayScore(type='number' name='awayScore' min='0')
+			
+				br
+				h2 Home Team Players
+				table#homePlayers
+					thead
+						tr
+							th Player
+							th Number
+							th Points
+							th Fouls
+							th Started
+					tbody
+						tr
+							td(colspan='4') No Players Found.
+			
+				br
+				h2 Away Team Players
+				table#awayPlayers
+					thead
+						tr
+							th Player
+							th Number
+							th Points
+							th Fouls
+							th Started
+					tbody	
+						tr
+							td(colspan='4') No Players Found.		
+
+			div.footer
+				input.button(type='submit' name='submit' value='Update Game Stats')
