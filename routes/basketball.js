@@ -251,8 +251,11 @@ function updateTeamStats(season, team, teamScore, oppScore, week, date, isHome, 
 		team 	: team
 	}, function(err, result) {
 		var winner = (teamScore > oppScore) ? true : false
+		var wasWinner = false;
 
 		if(week <= result.games.length) {
+			wasWinner = result.games[week-1].winner;
+
 			result.games[week-1].week = week;
 			result.games[week-1].date = date;
 			result.games[week-1].home = isHome;
@@ -260,6 +263,16 @@ function updateTeamStats(season, team, teamScore, oppScore, week, date, isHome, 
 			result.games[week-1].teamScore = teamScore;
 			result.games[week-1].oppScore = oppScore;
 			result.games[week-1].winner	= winner;
+
+			// was a winner, changed to loser
+			if(wasWinner && !winner) {
+				result.wins--;
+				result.losses++;
+			} else if(!wasWinner && winner) {
+			// was a loser, changed to winner
+				result.wins++;
+				result.losses--;
+			}
 		} else {
 			result.games.push({
 				'week'		: week,
@@ -270,12 +283,12 @@ function updateTeamStats(season, team, teamScore, oppScore, week, date, isHome, 
 				'oppScore'	: oppScore,
 				'winner'	: winner
 			});
-		}
 
-		if(winner)
-			result.wins++;
-		else 
-			result.losses++;
+			if(winner)
+				result.wins++;
+			else
+				result.losses--;
+		}
 
 		result.save();
 	});

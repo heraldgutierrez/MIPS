@@ -35,26 +35,28 @@ function updateTable(schedule) {
 				row += '<td>' + wGames[j].game + '</td>';
 				row += '<td>' + wGames[j].time + '</td>';
 
-				if(hs > as)
+				if(hs > as) {
 					row += '<td class="winner">' + wGames[j].home +'</td>';
-				else
+					row += '<td class="winner">' + wGames[j].homeScore +'</td>';
+				} else {
 					row += '<td>' + wGames[j].home +'</td>';
+					if(hs == 0)
+						row += '<td></td>';	
+					else
+						row += '<td>' + wGames[j].homeScore +'</td>';
+				}
+					
 
-				if(hs == 0)
-					row += '<td></td>';	
-				else
-					row += '<td>' + wGames[j].homeScore +'</td>';
-
-				if(as > hs)
+				if(as > hs) {
 					row += '<td class="winner">' + wGames[j].away +'</td>';
-				else
+					row += '<td class="winner">' + wGames[j].awayScore +'</td>';
+				} else {
 					row += '<td>' + wGames[j].away +'</td>';
-
-				if(as == 0)
-					row += '<td></td>';	
-				else
-					row += '<td>' + wGames[j].awayScore +'</td>';
-
+					if(as == 0)
+						row += '<td></td>';	
+					else
+						row += '<td>' + wGames[j].awayScore +'</td>';
+				}
 
 				row += '</tr>';
 
