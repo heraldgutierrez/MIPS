@@ -75,24 +75,26 @@ function updateTable(schedule) {
 function fillTeams() {
 	$.getJSON(
 		'/getAllTeams',
-		{ sort : 'rank' },
 		function(data) {
-			updateTeam(data);
+			updateTeamSelect(data);
 		}
 	);
 }
 
-function updateTeam(teams) {
+function updateTeamSelect(teams) {
 	var option;
 
 	if(teams.length != 0) {
+		$('#narrowSchedule').empty();
+		option = '<option value="All">Show All Teams</option>';
+		$('#narrowSchedule').append(option);
+
 		$.each(teams, function(i, team) {
 			option = '<option value="' + team.team + '">';
 			option += team.team;
 			option += '</option>';
 
-			$('#home').append(option);
-			$('#away').append(option);
+			$('#narrowSchedule').append(option);
 		});
 	}
 }

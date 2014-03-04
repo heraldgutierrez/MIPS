@@ -74,11 +74,12 @@ app.get('/Admin', isLoggedIn, isAdmin, routes.admin);
 app.get('/MembersOfMIPS', isLoggedIn, members.index);
 app.get('/MembersOfMIPS/AddMember', isLoggedIn, isMod, members.addMember);
 app.get('/MembersOfMIPS/EditMember/:id', isLoggedIn, isMod, members.editMember);
-// app.get('/MembersOfMIPS', members.index);
-// app.get('/MembersOfMIPS/AddMember', members.addMember);
-app.post('/addNewContact', members.addNewContact);		// user signup
+
+// Address Book DB
+app.post('/addNewContact', members.addNewContact);
 app.post('/editContact', members.editPrevContact);
 app.get('/getAllContacts', members.getAllContacts);
+
 
 /*********************************************************/
 // Basketball Pages
