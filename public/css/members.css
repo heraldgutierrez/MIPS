@@ -6,3 +6,7 @@ table tr th.add 	{ width: 15%; }
 table tr th.tel 	{ width: 15%; }
 
 table tr td.noContacts { padding: 10px; }
+
+h1 {
+	margin-top: 10px;
+}

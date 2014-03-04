@@ -10,7 +10,7 @@ block scripts
 block membersContent
 	center
 		h1 Members of MIPS
-		div.tableContainer
+		div.tableContainer(data-level="#{level}")
 			table#myContacts
 				thead
 					tr
@@ -20,4 +20,7 @@ block membersContent
 						th.child Children
 						th.add Address
 						th.tel Phone Number
+
+						if level < 3
+							th.edit Edit
 				tbody

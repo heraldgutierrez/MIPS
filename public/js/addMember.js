@@ -6,7 +6,6 @@ $(document).ready(function() {
 	if(query == 'true')
 		showSuccess();
 	else if(query == 'false') {
-
 		showWarning();
 		repopulateForm();
 	} else 
@@ -25,16 +24,18 @@ $(document).ready(function() {
 				str = str.substring(0, str.length - 1);	
 			else if(num.length == 0)	// delete '('
 				str = str.substring(0, str.length - 1);		
+
 		} else if(e.which >= 48 && e.which <= 57 && num.length < 10) {
 			if(num.length == 0)
 				str = '(';
-			else if(num.length == 3)
-				str += ') ';
-			else if(num.length == 6)
-				str += '-';
 
 			num += String.fromCharCode(e.which);
 			str += String.fromCharCode(e.which);
+
+			if(num.length == 3)
+				str += ') ';
+			else if(num.length == 6)
+				str += '-';
 		}
 	}).keyup(function() {
 		$(this).val(str);

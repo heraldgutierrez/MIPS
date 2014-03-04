@@ -5,17 +5,13 @@ block styles
 	block membersStyles
 
 block content
-	div.navbar-container
-		div.navbar
-			div.navbar-inner
-				ul.nav
-					if level == 1
-						li#li_Admin 
-							a(href='/Admin') Admin
-						li.divider-vertical
-					li#li_Members
-						a(href='/MembersOfMIPS') Members
-					if level < 3
+	if level < 3
+		div.navbar-container
+			div.navbar
+				div.navbar-inner
+					ul.nav
+						li#li_Members
+							a(href='/MembersOfMIPS') Members
 						li.divider-vertical
 						li#li_AddMember
 							a(href='/MembersOfMIPS/AddMember') Add New Member

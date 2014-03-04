@@ -14,6 +14,7 @@ function getAllMembers() {
 function updateTable(members) {
 	var row;
 	var body = '';
+	var level = $('.tableContainer').attr('data-level');
 
 	if(members.length != 0) {
 		$.each(members, function(i, user) {
@@ -24,6 +25,12 @@ function updateTable(members) {
 			row += '<td>' + user.children + '</td>';
 			row += '<td>' + user.address + '</td>';
 			row += '<td>' + user.phone +'</td>';
+
+			if(level < 3) {
+				row += '<td>';
+				row += '<a href="/MembersOfMIPS/EditMember/' + user._id + '">Edit</a>';
+				row += '</td>';
+			}
 			row += '</tr>';
 
 			$('#myContacts tbody').append(row);

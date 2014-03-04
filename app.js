@@ -73,9 +73,11 @@ app.get('/Admin', isLoggedIn, isAdmin, routes.admin);
 // Address Book
 app.get('/MembersOfMIPS', isLoggedIn, members.index);
 app.get('/MembersOfMIPS/AddMember', isLoggedIn, isMod, members.addMember);
+app.get('/MembersOfMIPS/EditMember/:id', isLoggedIn, isMod, members.editMember);
 // app.get('/MembersOfMIPS', members.index);
 // app.get('/MembersOfMIPS/AddMember', members.addMember);
 app.post('/addNewContact', members.addNewContact);		// user signup
+app.post('/editContact', members.editPrevContact);
 app.get('/getAllContacts', members.getAllContacts);
 
 /*********************************************************/

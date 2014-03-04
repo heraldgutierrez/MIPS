@@ -1,0 +1,61 @@
+extends membersLayout
+
+block membersStyles
+	link(rel='stylesheet' type='text/css' href='/css/forms.css')
+	link(rel='stylesheet' type='text/css' href='/css/addMember.css')
+
+block scripts
+	script(src='/js/editMember.js')
+
+block membersContent
+	div#wrapper
+		form.login-form(action='/editContact', method='post')
+			div.header
+				h1.signup Edit Member
+				if success == false
+					div#warning.warning 
+						strong Warning
+						|  Updating member information was unsuccessful. Please try again.
+			div.content
+				table
+					tr
+						td
+							label Mr.
+						td :
+						td
+							input.input(type='hidden' name='id' value='#{id}')
+							input#mr.input(type='text' name='mr' value='#{mr}')
+					tr
+						td
+							label Mrs./Miss
+						td :
+						td
+							input#mrs.input(type='text' name='mrs' value='#{mrs}')
+					tr
+						td
+							label Last Name
+						td :
+						td
+							input#last.input(type='text' name='last' value='#{last}')
+					tr
+						td
+							label Children
+						td :
+						td
+							input#children.input(type='text' name='children' placeholder='Separate children with a comma ( , )' value='#{children}');
+					tr
+						td
+							label Address
+						td :
+						td
+							input#address.input(type='text' name='address' value='#{address}')
+					tr
+						td
+							label Phone Number
+						td :
+						td
+							input#telephone.last(type='text' name='phone' placeholder='Format: (204) 123-4567' value='#{phone}')
+			div.footer.edit
+				div
+					a.button.danger(href='/MembersOfMIPS') Cancel
+					input.button(type='submit' name='submit' value='Edit Member')
