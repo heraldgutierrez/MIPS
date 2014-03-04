@@ -89,7 +89,7 @@ app.get('/Basketball/Standings', basketball.standings);
 app.get('/Basketball/TeamStats/:team', basketball.teamStats);
 app.get('/Basketball/Player/:player', basketball.playerStats);
 app.get('/Basketball/AllPlayers', basketball.allPlayers);
-app.get('/Basketball/UpdateStats', basketball.updateStats);
+app.get('/Basketball/UpdateStats', isLoggedIn, isAdmin, basketball.updateStats);
 
 
 // Basketball DB

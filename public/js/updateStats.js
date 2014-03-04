@@ -20,6 +20,20 @@ $(document).ready(function() {
 });
 
 /***********************************************
+presetDate: After a game has been updated, set date and time to the same date/time again
+***********************************************/
+function presetDate() {
+	var date = unescape(getURLParam('date'));
+	var time = unescape(getURLParam('time'));
+
+	$('#date').val(date);
+	$('#date').trigger('change');
+
+	$('#time').val(time);
+	$('#time').trigger('change');
+}
+
+/***********************************************
 fillDate: Retrieve and fill the 'Select' with all the dates in the schedule
 ***********************************************/
 function fillDates() {
@@ -33,6 +47,10 @@ function fillDates() {
 			changeTeams();
 			fillTeamPlayers(true);
 			fillTeamPlayers(false);
+
+			var query = getURLParam('success');
+			if(query != undefined)
+				presetDate();
 		}
 	);
 }

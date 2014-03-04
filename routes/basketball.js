@@ -227,7 +227,7 @@ exports.updateGameStats = function(req, res) {
 		updatePlayerStats(season, awayTeam, ids, i, week, date, homeTeam, points, fouls, starts);
 	}
 
-	res.redirect('/Basketball/updateStats?success=true');
+	res.redirect('/Basketball/updateStats?success=true&date=' + date + '&time=' + time);
 }
 
 function updateSchedule(season, date, time, gameNum, homeScore, awayScore) {
