@@ -37,6 +37,7 @@ function updateTable(players) {
 	var avgPt, avgF, avgS;
 	var pts, fls, st;
 	var name;
+	var level = $('.main-container').attr('data-level');
 
 	if(players.length != 0) {
 		$('#empty').hide();
@@ -78,6 +79,12 @@ function updateTable(players) {
 			row += '<td>' + fls + '</td>';
 			row += '<td>' + avgS + '</td>';
 			row += '<td>' + st + '</td>';
+
+			if(level == 1) {
+				row += '<td>';
+				row += '<a href="/Basketball/EditPlayer/' + player._id + '">Edit</a>';
+				row += '</td>';
+			}
 
 			row += '</tr>';
 

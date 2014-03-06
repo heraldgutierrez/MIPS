@@ -90,6 +90,7 @@ app.get('/Basketball/TeamStats/:team', basketball.teamStats);
 app.get('/Basketball/Player/:player', basketball.playerStats);
 app.get('/Basketball/AllPlayers', basketball.allPlayers);
 app.get('/Basketball/UpdateStats', isLoggedIn, isAdmin, basketball.updateStats);
+app.get('/Basketball/EditPlayer/:id', isLoggedIn, isAdmin, basketball.editPlayer);
 
 
 // Basketball DB
@@ -100,7 +101,8 @@ app.get('/getTeamByName', basketball.getTeamByName);
 app.get('/getPlayer', basketball.getPlayer);
 app.get('/getAllPlayers', basketball.getAllPlayers);
 app.get('/getPlayersByTeam', basketball.getPlayersByTeam);
-app.post('/updateGameStats', isLoggedIn, isAdmin, basketball.updateGameStats);
+app.post('/updateGameStats', basketball.updateGameStats);
+app.post('/editPlayer', basketball.editPlayerInfo)
 
 
 

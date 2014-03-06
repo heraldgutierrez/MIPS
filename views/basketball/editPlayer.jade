@@ -1,0 +1,50 @@
+extends layoutBasketball
+
+block basketballStyles
+	link(rel='stylesheet' type='text/css' href='/css/forms.css')
+	link(rel='stylesheet' type='text/css' href='/css/addMember.css')
+
+block basketballScripts
+	script(src='/js/editPlayer.js')
+
+block basketballContent
+	div#wrapper
+		form.login-form(action='/editPlayer', method='post')
+			div.header
+				h1.signup Edit Member
+				if success == false
+					div#warning.warning 
+						strong Warning
+						|  Updating player information was unsuccessful. Please try again.
+			div.content
+				table
+					tr
+						td
+							label Name
+						td :
+						td
+							input.input(type='hidden' name='id' value='#{id}')
+							input#name.input(type='text' name='name' value='#{name}')
+					tr
+						td
+							label Current Season
+						td :
+						td
+							input#season.input(type='text' name='season' value='#{season}')
+					tr
+						td
+							label Team
+						td :
+						td
+							input#team.input(type='text' name='team' value='#{team}')
+							select#teams.input(name='teams')
+					tr
+						td
+							label Number
+						td :
+						td
+							input#number.input(type='text' name='number' value='#{number}');
+			div.footer.edit
+				div
+					a.button.danger(href='/Basketball/AllPlayers') Cancel
+					input.button(type='submit' name='submit' value='Edit Player')

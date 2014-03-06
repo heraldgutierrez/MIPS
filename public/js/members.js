@@ -14,7 +14,7 @@ function getAllMembers() {
 function updateTable(members) {
 	var row;
 	var body = '';
-	var level = $('.tableContainer').attr('data-level');
+	var level = $('.main-container').attr('data-level');
 
 	if(members.length != 0) {
 		$.each(members, function(i, user) {

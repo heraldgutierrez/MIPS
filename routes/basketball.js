@@ -67,6 +67,28 @@ exports.allPlayers = function(req, res) {
 	});
 };
 
+exports.editPlayer = function(req, res) {
+	var id = req.params.id;
+	var level = getUserLevel(req);
+	var date = new Date();
+	var season = date.getFullYear();
+
+	PlayerModel.findOne({ season : season, _id : new ObjectId(id) }).exec(
+		function(err, result) {
+			res.render('basketball/editPlayer', {
+				title	: 'MIPS Winnipeg - Basketball Edit Player',
+				level 	: level,
+				id 		: result._id,
+				name 	: result.name,
+				season 	: result.season,
+				team 	: result.team,
+				number 	: result.number
+			});
+		}
+	);
+};
+
+
 
 
 /**************************************
@@ -321,4 +343,25 @@ function updatePlayerStats(season, team, ids, index, week, date, opp, points, fo
 
 		result.save();
 	});
+}
+
+exports.editPlayerInfo = function(req, res) {
+	var id = req.body.id;
+	var name = req.body.name;
+	var season = req.body.season;
+	var team = req.body.teams;
+	var number = req.body.number;
+
+	PlayerModel.findOne({
+		_id		: new ObjectId(id)
+	}, function(err, result) {
+		result.name = name;
+		result.season = season;
+		result.team = team;
+		result.number = number;
+
+		result.save();
+	});
+
+	res.redirect('/Basketball/EditPlayer/' + id + '?success=true');
 }

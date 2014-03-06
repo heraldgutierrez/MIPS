@@ -15,13 +15,15 @@ exports.admin = function(req, res) {
 
 exports.login = function(req, res) {
 	res.render('login', {
-		title	: 'MIPS Winnipeg - Login'
+		title	: 'MIPS Winnipeg - Login',
+		level 	: 3
 	});
 };
 
 exports.signup = function(req, res) {
 	res.render('signup', {
-		title	: 'MIPS Winnipeg - Sign Up'
+		title	: 'MIPS Winnipeg - Sign Up',
+		level 	: 3
 	});
 };
 
