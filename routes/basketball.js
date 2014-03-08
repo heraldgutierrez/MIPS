@@ -309,7 +309,7 @@ function updateTeamStats(season, team, teamScore, oppScore, week, date, isHome, 
 			if(winner)
 				result.wins++;
 			else
-				result.losses--;
+				result.losses++;
 		}
 
 		result.save();
