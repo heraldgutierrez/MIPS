@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
 	#teamPlayers tr th:nth-child(1) { width: 20%; }
 	#teamPlayers tr th:nth-child(2) { width: 10%; }
 	#teamPlayers tr th:nth-child(3) { width: 5%; }

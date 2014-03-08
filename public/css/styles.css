@@ -30,6 +30,10 @@ body {
 	min-height: 550px;
 }
 
+.tabs ul {
+	list-style-type: none;
+}
+
 .tabs ul li a {
 	background: -webkit-linear-gradient(bottom, #ededed 0%, #ddd 100%); /* Chrome and Safari */
 	background: -moz-linear-gradient(top, #ededed 0%, #ddd 100%); 		/* FF3.6+ */
@@ -40,7 +44,6 @@ body {
 	display: inline-block;
 	color: #666;
 	text-align: center;
-	border-radius: 6px 6px 0 0;
 	box-shadow: 2px 0 1px rgba(0,0,0,0.1), -2px 0 2px rgba(0,0,0,0.1);
 	text-decoration: none;
 }
@@ -60,7 +63,7 @@ body {
 	background: #ccc;
 }
 
-@media screen and (min-width: 601) {
+@media screen and (min-width: 640px) {
 	body {
 		width: 990px;
 	}
@@ -92,14 +95,14 @@ body {
 
 
 /* Media Queries */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
 	body {
-		width: 600px;
+		width: 640px;
 	}
 
 	.tabs a {
 		height: 40px;
-		font: 16px/35px sans-serif;
+		font: 25px/40px sans-serif;
 		display: inline-block;
 		color: #666;
 		text-align: center;
