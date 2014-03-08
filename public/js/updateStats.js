@@ -120,7 +120,10 @@ function fillTeamPlayers(isHome) {
 
 	$.getJSON(
 		'/getPlayersByTeam',
-		{ team : team },
+		{ 
+			team : team,
+			sort : 'number'
+		},
 		function(data) {
 			updateTeamPlayers(data, isHome);
 		}

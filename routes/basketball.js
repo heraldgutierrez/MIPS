@@ -197,17 +197,26 @@ exports.getAllPlayers = function(req, res) {
 exports.getPlayersByTeam = function(req, res) {
 	var season = req.query.season;
 	var team = req.query.team;
+	var sort = req.query.sort;
 
 	if(season == undefined) {
 		var date = new Date();
 		season = date.getFullYear();
 	}
 
-	PlayerModel.find({ season : season, team : team }).sort({ name : 1 }).exec(
-		function(err, result) {
-			res.json(result);
-		}
-	);	
+	if(sort == 'number') {
+		PlayerModel.find({ season : season, team : team }).sort({ number : 1 }).exec(
+			function(err, result) {
+				res.json(result);
+			}
+		);	
+	} else {
+		PlayerModel.find({ season : season, team : team }).sort({ name : 1 }).exec(
+			function(err, result) {
+				res.json(result);
+			}
+		);	
+	}
 }
 
 exports.updateGameStats = function(req, res) {
