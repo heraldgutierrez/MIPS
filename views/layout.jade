@@ -23,13 +23,17 @@ html
 		block scripts
 
 	body
-		div#header
+		header.header
 			div.logo-container
 				div.logo
 					img(src='/img/mips-logo.png')
-			section.tabs
-				a.tabHome(href='/') Home
-				a.tabMembers(href='/MembersOfMIPS') Members of MIPS
-				a.tabBasketball(href='/Basketball') Basketball
+			nav.tabs
+				ul
+					li
+						a.tabHome(href='/') Home
+					li
+						a.tabMembers(href='/MembersOfMIPS') Members of MIPS
+					li
+						a.tabBasketball(href='/Basketball') Basketball
 		div.main-container(data-level='#{level}')
 			block content
