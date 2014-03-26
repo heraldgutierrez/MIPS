@@ -5,12 +5,7 @@ var UserModel = mongoose.model('Users');
  */
 
 exports.index = function(req, res) {
-	// res.render('index');
-	res.redirect('/Basketball');
-};
-
-exports.admin = function(req, res) {
-	res.send('Admin');
+	res.render('index');
 };
 
 exports.login = function(req, res) {

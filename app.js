@@ -68,8 +68,6 @@ app.get('/signup', routes.signup);				// signup page
 app.post('/loginUser', routes.loginUser);		// user login
 app.post('/signupUser', routes.signupUser);		// user signup
 
-app.get('/Admin', isLoggedIn, isAdmin, routes.admin);
-
 // Address Book
 app.get('/MembersOfMIPS', isLoggedIn, members.index);
 app.get('/MembersOfMIPS/AddMember', isLoggedIn, isMod, members.addMember);
