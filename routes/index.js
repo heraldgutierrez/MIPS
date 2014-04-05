@@ -5,7 +5,10 @@ var UserModel = mongoose.model('Users');
  */
 
 exports.index = function(req, res) {
-	res.render('index');
+	res.render('index', {
+		title	: 'MIPS Winnipeg',
+		level 	: 3
+	});
 };
 
 exports.login = function(req, res) {
