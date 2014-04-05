@@ -42,6 +42,8 @@ function updateTable(schedule) {
 					row += '<td>' + wGames[j].home +'</td>';
 					if(hs == 0)
 						row += '<td></td>';	
+					else if(hs == -1)
+						row += '<td>Forfeit</td>';	
 					else
 						row += '<td>' + wGames[j].homeScore +'</td>';
 				}
@@ -54,6 +56,8 @@ function updateTable(schedule) {
 					row += '<td>' + wGames[j].away +'</td>';
 					if(as == 0)
 						row += '<td></td>';	
+					else if(as == -1)
+						row += '<td>Forfeit</td>';	
 					else
 						row += '<td>' + wGames[j].awayScore +'</td>';
 				}

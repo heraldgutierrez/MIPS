@@ -13,30 +13,6 @@ block basketballContent
 			h1 2014 MIPS Basketball
 
 			h2 
-				u Regular Season
-
-			div#divNarrow
-				span Narrow Schedule by Team : 
-				select#narrowSchedule
-
-			table#schedule
-				thead
-					tr
-						th Week
-						th Date
-						th Game
-						th Time
-						th Home
-						th Score
-						th Visitor
-						th Score
-						
-				tbody
-
-
-			br
-			br
-			h2 
 				u Playoffs
 			table
 				thead
@@ -57,19 +33,25 @@ block basketballContent
 						td April 12
 						td 
 						td 
-						td(colspan='4') Team Standing 1 and 2 has a bye
+						td(colspan='4') Blue and Red has a bye
 					tr
 						td 
 						td 
 						td 1
 						td 1 pm
-						td(colspan='4') Team Standing 3 vs 6 (Winner Advance)
+						td White
+						td
+						td Green
+						td 
 					tr
 						td 
 						td 
 						td 2
 						td 2:30 pm
-						td(colspan='4') Team Standing 4 vs 5 (Winner Advance)
+						td Black
+						td
+						td Yellow
+						td 
 					
 					tr.odd
 						td(colspan='8' height='87px') April 19 - NO GAMES!
@@ -81,13 +63,13 @@ block basketballContent
 						td April 26
 						td 1
 						td 1 pm
-						td(colspan='4') Winner from game 2 vs 2
+						td(colspan='4') Red vs (Black or Yellow)
 					tr
 						td 
 						td 
 						td 2
 						td 2:30 pm
-						td(colspan='4') Winner from game 1 vs 1
+						td(colspan='4') Blue vs (White or Green)
 
 					tr.odd.semi
 						td(colspan='8') Championship
@@ -103,4 +85,28 @@ block basketballContent
 						td 
 						td 2:30 pm
 						td(colspan='4') Award Ceremony
+
+			br
+			br
+			h2 
+				u Regular Season
+
+			div#divNarrow
+				span Narrow Schedule by Team : 
+				select#narrowSchedule
+
+			table#schedule
+				thead
+					tr
+						th Week
+						th Date
+						th Game
+						th Time
+						th Home
+						th Score
+						th Visitor
+						th Score
+						
+				tbody
+			
 		br
