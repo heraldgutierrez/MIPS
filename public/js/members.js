@@ -27,7 +27,7 @@ function updateTable(members) {
 			row += '<td>' + user.phone +'</td>';
 
 			if(level < 3) {
-				row += '<td>';
+				row += '<td class="edit">';
 				row += '<a href="/MembersOfMIPS/EditMember/' + user._id + '">Edit</a>';
 				row += '</td>';
 			}
